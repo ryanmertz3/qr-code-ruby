@@ -1,8 +1,8 @@
 require "rqrcode"
 
-kind_of_code = 1
+kind_of_code = "1"
 
-while kind_of_code != 4
+while !kind_of_code.include?("4")
 
   puts "What kind of QR code would you like to generate?"
   puts
@@ -12,18 +12,18 @@ while kind_of_code != 4
   puts "4. Exit program"
   puts
 
-  kind_of_code = gets.to_i
+  kind_of_code = gets.chomp
   puts
 
-  if kind_of_code == 4
+  if kind_of_code.include?("4")
     break
-  elsif kind_of_code == 1
+  elsif kind_of_code.include?("1")
     puts "What is the URL you would like to encode?"
     puts
     
     text_to_encode = gets.chomp
     puts
-  elsif kind_of_code == 2
+  elsif kind_of_code.include?("2")
     puts "What is the name of the wifi network?"
     puts
 
@@ -37,7 +37,7 @@ while kind_of_code != 4
     puts
 
     text_to_encode = "WIFI:T:WPA;S:#{network_name};P:#{network_password};;"
-  elsif kind_of_code == 3
+  elsif kind_of_code.include?("3")
     puts "What is the phone number you want the code to send a text message to?"
     puts
 
