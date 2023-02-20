@@ -62,6 +62,7 @@ while kind_of_code != 4
   puts
 
   filename = gets.chomp
+  puts
 
   qrcode = RQRCode::QRCode.new(text_to_encode)
 
